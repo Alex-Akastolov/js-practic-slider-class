@@ -43,6 +43,15 @@ Carousel.prototype = {
             const indicator = document.createElement('div');
             indicator.setAttribute('class', i !== 0 ? 'indicator' : 'indicator active');
             indicator.dataset.slideTo = `${i}`;
+
+            const slideName = document.createElement('span');
+            const number = `${i + 1}`;
+            const slideText = `Slide ${number}`;
+
+            slideName.setAttribute('class', i !== 0 ? 'indicator__text' : 'indicator__text open');
+            slideName.innerHTML = slideText;
+
+            indicator.append(slideName);
             indicators.append(indicator);
         }
         this.container.append(indicators);
