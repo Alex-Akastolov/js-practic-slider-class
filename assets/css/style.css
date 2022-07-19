@@ -161,6 +161,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: rgba(255, 255, 255, 0);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -182,11 +183,13 @@ body {
 }
 .indicator:hover {
   width: 120px;
+  color: #fff;
   -webkit-box-shadow: 0 0 8px #ffffff;
           box-shadow: 0 0 8px #ffffff;
   border: 3px solid rgba(255, 255, 255, 0.8);
 }
 .indicator.active {
+  color: #fff;
   width: 120px;
   -webkit-box-shadow: 0 0 8px #ffffff;
           box-shadow: 0 0 8px #ffffff;
@@ -194,25 +197,4 @@ body {
 }
 .indicator.active:hover {
   background-color: rgba(255, 255, 255, 0.8);
-}
-.indicator__text {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #fff;
-  opacity: 0;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-}
-.indicator__text:hover,
-.indicator__text :focus {
-  opacity: 1;
 }

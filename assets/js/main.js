@@ -1,4 +1,4 @@
-const carousel = new Carousel();
+const carousel = new SwipeCarousel();
 
 carousel.init();
 

@@ -1,7 +1,6 @@
 function Carousel() {
     this.container = document.querySelector('#carousel');
     this.slides = this.container.querySelectorAll('.slide');
-
 };
 
 Carousel.prototype = {
@@ -26,7 +25,6 @@ Carousel.prototype = {
         const PREV = `<span class="control control-prev" id="prev">${this.FA_PREV}</span>`;
         const NEXT = `<span class="control control-next" id="next">${this.FA_NEXT}</span>`;
 
-
         controls.setAttribute('class', 'controls');
         controls.innerHTML = PAUSE + PREV + NEXT;
         this.container.append(controls);
@@ -43,19 +41,10 @@ Carousel.prototype = {
             const indicator = document.createElement('div');
             indicator.setAttribute('class', i !== 0 ? 'indicator' : 'indicator active');
             indicator.dataset.slideTo = `${i}`;
-
-            const slideName = document.createElement('span');
-            const number = `${i + 1}`;
-            const slideText = `Slide ${number}`;
-
-            slideName.setAttribute('class', i !== 0 ? 'indicator__text' : 'indicator__text open');
-            slideName.innerHTML = slideText;
-
-            indicator.append(slideName);
+            indicator.innerHTML = `Slide ${i + 1}`;
             indicators.append(indicator);
         }
         this.container.append(indicators);
-
         this.indicatorContainer = this.container.querySelector('.indicators');
         this.indicators = this.indicatorContainer.querySelectorAll('.indicator');
     },
@@ -83,7 +72,6 @@ Carousel.prototype = {
     },
     _goToPrev: function () {
         this._goToNth(this.currentSlide - 1);
-
     },
     _pause: function () {
         clearInterval(this.timerID);
@@ -97,7 +85,6 @@ Carousel.prototype = {
     },
 
     _initListeners: function () {
-
         this.pauseBtn.addEventListener('click', this.pausePlay.bind(this));
         this.prevBtn.addEventListener('click', this.prev.bind(this));
         this.nextBtn.addEventListener('click', this.next.bind(this));
@@ -112,7 +99,6 @@ Carousel.prototype = {
             this._goToNth(+target.dataset.slideTo);
             this._pause();
         };
-
     },
 
     pausePlay: function () {

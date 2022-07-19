@@ -129,6 +129,7 @@ body {
 
 .indicator {
   display: flex;
+  color: rgba(#fff, 0);
   align-items: center;
   justify-content: center;
   width: 20px;
@@ -140,29 +141,17 @@ body {
   transition: 0.5s;
   &:hover {
     width: 120px;
+    color: #fff;
     box-shadow: 0 0 8px #ffffff;
     border: 3px solid rgba(#fff, 0.8);
   }
   &.active {
+    color: #fff;
     width: 120px;
     box-shadow: 0 0 8px #ffffff;
     background-color: rgba(#fff, 0.5);
     &:hover {
       background-color: rgba(#fff, 0.8);
-    }
-  }
-  &__text {
-    position: relative;
-    // width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    opacity: 0;
-    transition: 0.5s;
-    &:hover,
-    :focus {
-      opacity: 1;
     }
   }
 }
